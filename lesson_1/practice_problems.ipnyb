@@ -1,0 +1,457 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "622698b7-a2a1-4321-87aa-b2cf609a6e90",
+   "metadata": {},
+   "source": [
+    "## Problem 1\n",
+    "\n",
+    "Given the tuple:\n",
+    "\n",
+    "`fruits = (\"apple\", \"banana\", \"cherry\", \"date\", \"banana\")`\n",
+    "\n",
+    "How would you count the number of occurrences of \"banana\" in the tuple?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "9696b520-cf57-4a63-bc0a-f057b411eae9",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "2\n"
+     ]
+    }
+   ],
+   "source": [
+    "fruits = (\"apple\", \"banana\", \"cherry\", \"date\", \"banana\")\n",
+    "\n",
+    "banana_occurences = 0\n",
+    "\n",
+    "for fruit in fruits:\n",
+    "    if fruit == \"banana\":\n",
+    "        banana_occurences += 1\n",
+    "\n",
+    "print(banana_occurences)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "981450ac-050d-429a-ba7c-af86c438039e",
+   "metadata": {},
+   "source": [
+    "## Problem 2\n",
+    "\n",
+    "Consider the set:\n",
+    "\n",
+    "```python\n",
+    "numbers = {1, 2, 3, 4, 5, 5, 4, 3}\n",
+    "print(len(numbers))\n",
+    "```\n",
+    "\n",
+    "What is the set's length? Try to answer without running the code.\n",
+    "\n",
+    "The length of the set will be five, as sets can not contain repeat elements."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e2dececb-7c07-4a8f-9bff-a93844c11ca4",
+   "metadata": {},
+   "source": [
+    "## Problem 3\n",
+    "\n",
+    "Given two sets:\n",
+    "\n",
+    "```python\n",
+    "a = {1, 2, 3, 4}\n",
+    "b = {3, 4, 5, 6}\n",
+    "```\n",
+    "\n",
+    "How would you obtain a set that contains all the unique values from both sets?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "f4fa8d5f-e0f9-4a99-a022-714d1f88a93a",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{1, 2, 3, 4, 5, 6}\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = {1, 2, 3, 4}\n",
+    "b = {3, 4, 5, 6}\n",
+    "\n",
+    "c = a.union(b)\n",
+    "print(c)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5e17ca64-a876-4fea-84fd-3063d0c4ef44",
+   "metadata": {},
+   "source": [
+    "## Problem 4\n",
+    "\n",
+    "Given the following code, what would the output be? Try to answer without running the code.\n",
+    "\n",
+    "```python\n",
+    "names = [\"Fred\", \"Barney\", \"Wilma\", \"Betty\", \"Pebbles\", \"Bambam\"]\n",
+    "name_positions = {}\n",
+    "for index, name in enumerate(names):\n",
+    "    name_positions[name] = index\n",
+    "print(name_positions)\n",
+    "```\n",
+    "\n",
+    "```python\n",
+    "{\"Fred\": 0, \"Barney\": 1, \"Wilma\": 2, \"Betty\": 3, \"Pebbles\": 4, \"Bambam\": 5}\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6a215233-4b81-469b-a449-b4d2ffccdfb9",
+   "metadata": {},
+   "source": [
+    "## Problem 5\n",
+    "\n",
+    "Calculate the total age given the following dictionary:\n",
+    "```python\n",
+    "ages = {\n",
+    "    \"Herman\": 32,\n",
+    "    \"Lily\": 30,\n",
+    "    \"Grandpa\": 5843,\n",
+    "    \"Eddie\": 10,\n",
+    "    \"Marilyn\": 22,\n",
+    "    \"Spot\": 237,\n",
+    "}\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "dbb43636-9349-4358-ab0d-fae8d3b949d0",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "6174\n"
+     ]
+    }
+   ],
+   "source": [
+    "ages = {\n",
+    "    \"Herman\": 32,\n",
+    "    \"Lily\": 30,\n",
+    "    \"Grandpa\": 5843,\n",
+    "    \"Eddie\": 10,\n",
+    "    \"Marilyn\": 22,\n",
+    "    \"Spot\": 237,\n",
+    "}\n",
+    "\n",
+    "cumulative_total = 0\n",
+    "\n",
+    "for age in ages.values():\n",
+    "    cumulative_total += age\n",
+    "\n",
+    "print(cumulative_total)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ad6426d0-65ec-4cb2-9e82-23ba530d2194",
+   "metadata": {},
+   "source": [
+    "## Problem 6\n",
+    "\n",
+    "Determine the minimum age from the above ages dictionary."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "68172fc9-ac8d-40ea-9fa3-0db5de810eaf",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "10\n"
+     ]
+    }
+   ],
+   "source": [
+    "ages = {\n",
+    "    \"Herman\": 32,\n",
+    "    \"Lily\": 30,\n",
+    "    \"Grandpa\": 5843,\n",
+    "    \"Eddie\": 10,\n",
+    "    \"Marilyn\": 22,\n",
+    "    \"Spot\": 237,\n",
+    "}\n",
+    "\n",
+    "min_age = 0\n",
+    "\n",
+    "view_ages = ages.items()\n",
+    "\n",
+    "for idx, val in enumerate(view_ages):\n",
+    "    elem_age = val[1]\n",
+    "    if idx == 0:\n",
+    "        min_age = elem_age\n",
+    "        continue\n",
+    "\n",
+    "    if elem_age < min_age:\n",
+    "        min_age = elem_age\n",
+    "\n",
+    "print(min_age)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "30f0449d-9bbf-4c67-9d3d-15c57b9fbd9c",
+   "metadata": {},
+   "source": [
+    "## Problem 7\n",
+    "\n",
+    "What would the following code output? Try to answer without running the code.\n",
+    "```python\n",
+    "words = ['ant', 'bear', 'cat']\n",
+    "selected_words = []\n",
+    "for word in words:\n",
+    "    if len(word) > 3:\n",
+    "        selected_words.append(word)\n",
+    "\n",
+    "print(selected_words)\n",
+    "```\n",
+    "\n",
+    "```python\n",
+    "[\"bear\"]\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "183bb278-05c0-4bbc-91d0-dcc825994aca",
+   "metadata": {},
+   "source": [
+    "## Problem 8\n",
+    "\n",
+    "Given the following string, create a dictionary that represents the frequency with which each letter occurs. The frequency count should be case-sensitive:\n",
+    "\n",
+    "```python\n",
+    "statement = \"The Flintstones Rock\"\n",
+    "```\n",
+    "\n",
+    "The output should resemble the following:\n",
+    "\n",
+    "# Pretty printed for clarity\n",
+    "```python\n",
+    "{\n",
+    "    'T': 1,\n",
+    "    'h': 1,\n",
+    "    'e': 2,\n",
+    "    'F': 1,\n",
+    "    'l': 1,\n",
+    "    'i': 1,\n",
+    "    'n': 2,\n",
+    "    't': 2,\n",
+    "    's': 2,\n",
+    "    'o': 2,\n",
+    "    'R': 1,\n",
+    "    'c': 1,\n",
+    "    'k': 1\n",
+    "}\n",
+    "```\n",
+    "Your program may output the pairs in a different order."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "bd832e7b-8e3f-4ab0-9d56-13ee0f150913",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'T': 1, 'h': 1, 'e': 2, 'F': 1, 'l': 1, 'i': 1, 'n': 2, 't': 2, 's': 2, 'o': 2, 'R': 1, 'c': 1, 'k': 1}\n"
+     ]
+    }
+   ],
+   "source": [
+    "statement = \"The Flintstones Rock\"\n",
+    "\n",
+    "frequency_dict = {}\n",
+    "\n",
+    "statement_no_spaces = statement.replace(\" \", \"\")\n",
+    "\n",
+    "for char in statement_no_spaces:\n",
+    "    frequency_dict[char] = frequency_dict.get(char, 0) + 1\n",
+    "\n",
+    "print(frequency_dict)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6980d56a-e6eb-40be-9ee5-77959977c9db",
+   "metadata": {},
+   "source": [
+    "## Problem 9\n",
+    "\n",
+    "\n",
+    "What is the return value of the list comprehension below? Try to answer without running the code.\n",
+    "\n",
+    "```python\n",
+    "[num for num in [1, 2, 3] if num > 1]\n",
+    "```\n",
+    "\n",
+    "\n",
+    "```python\n",
+    "[2, 3]\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f23d2b87-e806-40a6-8fa1-64626d641c32",
+   "metadata": {},
+   "source": [
+    "## Problem 10\n",
+    "\n",
+    "What does the following code print and why?\n",
+    "\n",
+    "```python\n",
+    "dictionary = {'a': 'ant', 'b': 'bear'}\n",
+    "print(dictionary.popitem())\n",
+    "```\n",
+    "\n",
+    "\n",
+    "```python\n",
+    "('b', 'bear')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "156abf68-6340-45f4-a2df-c48c0ae2c95c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "('b', 'bear')\n"
+     ]
+    }
+   ],
+   "source": [
+    "dictionary = {'a': 'ant', 'b': 'bear'}\n",
+    "print(dictionary.popitem())"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ef079d77-f240-467c-8c93-cd1bf1e85de3",
+   "metadata": {},
+   "source": [
+    "## Problem 11\n",
+    "\n",
+    "What does the following code return? Try to answer without running the code.\n",
+    "\n",
+    "```python\n",
+    "lst = [1, 2, 3, 4, 5]\n",
+    "lst[:2]\n",
+    "```\n",
+    "\n",
+    "\n",
+    "```\n",
+    "[1, 2]\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "41dd32fa-b551-4749-9e89-6d133a27a574",
+   "metadata": {},
+   "source": [
+    "## Problem 12\n",
+    "\n",
+    "What would be the output of the below code? Try to answer without running the code.\n",
+    "\n",
+    "```python\n",
+    "frozen = frozenset([1, 2, 3, 4, 5])\n",
+    "frozen.add(6)\n",
+    "print(frozen)\n",
+    "```\n",
+    "\n",
+    "\n",
+    "This codes returns the original list containing numbers 1-5 as froxzen sets are non-mutable.\n",
+    "\n",
+    "\n",
+    "** The code actually returns an error. Frozen set objects do not have an `.add()` method."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "77c3cb85-1c87-4a5d-a71d-39c080dd10ae",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "AttributeError",
+     "evalue": "'frozenset' object has no attribute 'add'",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mAttributeError\u001b[39m                            Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[15]\u001b[39m\u001b[32m, line 2\u001b[39m\n\u001b[32m      1\u001b[39m frozen = \u001b[38;5;28mfrozenset\u001b[39m([\u001b[32m1\u001b[39m, \u001b[32m2\u001b[39m, \u001b[32m3\u001b[39m, \u001b[32m4\u001b[39m, \u001b[32m5\u001b[39m])\n\u001b[32m----> \u001b[39m\u001b[32m2\u001b[39m \u001b[43mfrozen\u001b[49m\u001b[43m.\u001b[49m\u001b[43madd\u001b[49m(\u001b[32m6\u001b[39m)\n\u001b[32m      3\u001b[39m \u001b[38;5;28mprint\u001b[39m(frozen)\n",
+      "\u001b[31mAttributeError\u001b[39m: 'frozenset' object has no attribute 'add'"
+     ]
+    }
+   ],
+   "source": [
+    "frozen = frozenset([1, 2, 3, 4, 5])\n",
+    "frozen.add(6)\n",
+    "print(frozen)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
